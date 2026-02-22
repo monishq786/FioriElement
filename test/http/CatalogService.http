@@ -1,0 +1,35 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+### ---------------------------------------
+### GET Books
+# @name Books_GET
+GET {{server}}/odata/v4/catalog/Books
+Accept: application/json
+
+
+### CREATE Book With GUID
+POST {{server}}/odata/v4/catalog/Books
+Content-Type: application/json
+Accept: application/json
+
+{
+  "ID": "8d3b9e10-5344-4b4a-a7or-0e6c9b8a1234",
+  "title": "Science Book",
+  "stock": 25
+}
+
+
+### ---------------------------------------
+### PATCH Book (Update)
+# Replace ID with actual UUID returned from CREATE
+# @name Books_PATCH
+PATCH {{server}}/odata/v4/catalog/Books('8d3b9e20-5b74-4b4a-a7fd-0e6c9b8a1234')
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Biology Printed Book",
+  "stock":750
+}
