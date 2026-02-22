@@ -1,7 +1,7 @@
 namespace my.bookshop;
 
 entity Books {
-     key ID    : UUID;
+     key ID    : Integer;
       title : String;
       stock : Integer;
 }
