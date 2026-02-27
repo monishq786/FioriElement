@@ -7,11 +7,27 @@
                 <Column>
                     <Text text="Product ID" />
                 </Column>
+                <Column>
+                    <Text text="Product Name" />
+                </Column>
+                <Column>
+                    <Text text="Quantity Per Unit" />
+                </Column>
+                <Column>
+                    <Text text="Unit Price" />
+                </Column>
+                <Column>
+                    <Text text="Units In Stock" />
+                </Column>
             </columns>
             <items>
                 <ColumnListItem>
                     <cells>
                         <Text text="{ProdModel>ProductID}" />
+                        <Text text="{ProdModel>ProductName}" />
+                        <Text text="{ProdModel>QuantityPerUnit}" />
+                        <Text text="{ProdModel>UnitPrice}" />
+                        <Text text="{ProdModel>UnitsInStock}" />
                     </cells>
                 </ColumnListItem>
             </items>
