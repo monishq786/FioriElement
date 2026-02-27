@@ -2,16 +2,16 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
-        <Table id="prodTable" items="{Prod>/}">
+        <Table id="prodTable" items="{ProdModel>/}">
             <columns>
                 <Column>
-                    <Text text="Product" />
+                    <Text text="Product ID" />
                 </Column>
             </columns>
             <items>
                 <ColumnListItem>
                     <cells>
-                        <Text text="{}" />
+                        <Text text="{ProdModel>ProductID}" />
                     </cells>
                 </ColumnListItem>
             </items>
