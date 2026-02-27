@@ -5,6 +5,7 @@ sap.ui.define([
 
     return Controller.extend("nwproductsdata.controller.View1", {
         onInit() {
+          
         }
     });
 });

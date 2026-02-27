@@ -2,5 +2,19 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
+        <Table id="prodTable" items="{Prod>/}">
+            <columns>
+                <Column>
+                    <Text text="Product" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
     </Page>
 </mvc:View>
