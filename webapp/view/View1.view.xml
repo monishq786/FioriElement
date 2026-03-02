@@ -3,7 +3,7 @@
     xmlns:f="sap.ui.layout.form"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
-        <VBox>
+        <!-- <VBox>
             <Text id="idProp" />
             <f:SimpleForm id="idElement" editable="true" layout="ResponsiveGridLayout" title="Name with Country" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
                 <f:content>
@@ -13,7 +13,7 @@
                     <Input value="{empModel>/Country}" width="200px" />
                 </f:content>
             </f:SimpleForm>
-        </VBox>
+        </VBox> -->
         <Table id="prodTable" items="{ProdModel>/}">
             <columns>
                 <Column>
