@@ -1,0 +1,49 @@
+<mvc:View controllerName="nwproductsv2.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <VBox>
+            <Text id="idProp" />
+            <f:SimpleForm id="idElement" editable="true" layout="ResponsiveGridLayout" title="Name with Country" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                <f:content>
+                    <Label text="Name" />
+                    <Input id="name" value="{empModel>/Name}" width="200px"/>
+                    <Label text="Country" />
+                    <Input value="{empModel>/Country}" width="200px" />
+                </f:content>
+            </f:SimpleForm>
+        </VBox>
+        <Table id="prodTable" items="{ProdModel>/}">
+            <columns>
+                <Column>
+                    <Text text="Product ID" />
+                </Column>
+                <Column>
+                    <Text text="Product Name" />
+                </Column>
+                <Column>
+                    <Text text="Quantity Per Unit" />
+                </Column>
+                <Column>
+                    <Text text="Unit Price" />
+                </Column>
+                <Column>
+                    <Text text="Units In Stock" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{ProdModel>ProductID}" />
+                        <Text text="{ProdModel>ProductName}" />
+                        <Text text="{ProdModel>QuantityPerUnit}" />
+                        <!-- <Text text="{ProdModel>UnitPrice}" /> -->
+                        <ObjectStatus class="sapUiSmallMarginBottom" text="{ProdModel>UnitPrice}" icon="{=${ProdModel>UnitPrice} > 50 ? 'sap-icon://error' : 'sap-icon://sys-enter-2'}" state="{= ${ProdModel>UnitPrice} > 50 ? 'Error' : 'Success' }" />
+                        <Text text="{ProdModel>UnitsInStock}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>
