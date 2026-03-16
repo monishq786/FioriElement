@@ -23,6 +23,22 @@ sap.ui.define([
                   sap.m.MessageToast("Fetching Error",oError);
                 }
             })
+
+           
+
+            let aEmp = {
+                "Name" :"Monish",
+                "Country" : "India"
+            }
+
+            let oModel = new JSONModel();
+            oModel.setData(aEmp);
+             ///Property Binding
+            this.getView().setModel(oModel,"empModel");
+            this.byId('idProp').bindProperty('text','empModel>/Name')
+
+            /// Element Binding
+            this.byId('idElement').bindElement('empModel>/');
             
         }
     });
