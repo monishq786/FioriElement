@@ -12,14 +12,20 @@ sap.ui.define([
         getProductData: function () {
 
             let oModelProd = this.getOwnerComponent().getModel();
+            sap.ui.core.BusyIndicator.show(0)
             oModelProd.read('/Products', {
+                urlParameters: {
+                    //"$expand": "Order_Details"
+                    "$orderby":"UnitPrice"
+                },
                 success: (oData) => {
+                    sap.ui.core.BusyIndicator.hide()
                     let oModel = new JSONModel();
                     oModel.setData(oData.results);
                     this.getView().setModel(oModel, 'ProdModel');
                 },
                 error: (oError) => {
-                    sap.m.MessageToast("Fetching Error", oError);
+                    sap.ui.core.BusyIndicator.hide()
                 }
             })
 
